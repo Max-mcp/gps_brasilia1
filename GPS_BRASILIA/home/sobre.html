@@ -18,7 +18,7 @@
             <nav>
                 <ul>
                     <li><a href="./index.html">inicio</a></li>
-                    <li><a href="">explorar</a></li>
+                    <li><a href="./esplorar.html">explorar</a></li>
                     <li><a href="">experiencia</a></li>
                     <li><a href="">favoritos</a></li>
                     <li><a href="./sobre.html">sobre</a></li>
@@ -26,45 +26,63 @@
             </nav>
         </div>
     </header>
-    <section class="sobre-section" id="sobre">
+    <section class="sobre-section">
   <div class="sobre-container">
     
-    <!-- Conteúdo em Texto e Imagem -->
+    <!-- Bloco Superior: Texto + Ilustração da Catedral -->
     <div class="sobre-top">
       <div class="sobre-text">
-        
         <h2>SOBRE O<br>GPS BRASÍLIA</h2>
+        <!-- Linha verde-água (teal) do layout -->
+        <div class="title-underline"></div> 
         
         <p>Somos um guia digital colaborativo que conecta pessoas aos melhores lugares, histórias e experiências de Brasília.</p>
         <p>Mais que um guia, somos um ponto de encontro entre você e a cidade.</p>
       </div>
 
-      <div class="sobre-image">
-        <img src="/assets/Gemini_Generated_Image_dhb3sedhb3sedhb3-removebg-preview.png" alt="">
-        <img src="/assets/img-sobre.png" alt="Palácio da Alvorada">
+      <!-- Ícone vetorial da Catedral na direita -->
+      <div class="sobre-icon">
+        <img src="/assets/Gemini_Generated_Image_dhb3sedhb3sedhb3-removebg-preview.png" alt="Ilustração Catedral de Brasília">
       </div>
     </div>
 
-    <!-- Indicadores / Métricas do Site -->
+    <!-- Foto do Palácio da Alvorada alinhada à direita -->
+    <div class="sobre-banner">
+      <img src="/assets/img-sobre.png" alt="Palácio da Alvorada">
+    </div>
+
+    <!-- Indicadores / Métricas com Ícones -->
     <div class="sobre-stats">
       <div class="stat-item">
-        <span class="stat-number">+500</span>
-        <span class="stat-label">LUGARES</span>
+        <i class="fa-solid fa-location-dot stat-icon"></i>
+        <div class="stat-content">
+          <span class="stat-number">+500</span>
+          <span class="stat-label">LUGARES</span>
+        </div>
       </div>
 
       <div class="stat-item">
-        <span class="stat-number">+50</span>
-        <span class="stat-label">EXPERIÊNCIAS</span>
+        <i class="fa-solid fa-atom stat-icon"></i>
+        <div class="stat-content">
+          <span class="stat-number">+50</span>
+          <span class="stat-label">EXPERIÊNCIAS</span>
+        </div>
       </div>
 
       <div class="stat-item">
-        <span class="stat-number">+10K</span>
-        <span class="stat-label">USUÁRIOS</span>
+        <i class="fa-solid fa-user-gear stat-icon"></i>
+        <div class="stat-content">
+          <span class="stat-number">+10K</span>
+          <span class="stat-label">USUÁRIOS</span>
+        </div>
       </div>
 
       <div class="stat-item">
-        <span class="stat-number">1</span>
-        <span class="stat-label">CIDADE ÚNICA</span>
+        <i class="fa-solid fa-book-open stat-icon"></i>
+        <div class="stat-content">
+          <span class="stat-number">1</span>
+          <span class="stat-label">CIDADE ÚNICA</span>
+        </div>
       </div>
     </div>
 
@@ -72,11 +90,8 @@
 </section>
 
 
-
-
-
-    
-    <footer class="site-footer">
+<!-- Footer -->
+<footer class="site-footer">
   <div class="footer-container">
     
     <!-- Coluna 1: Marca e Descrição -->
@@ -130,8 +145,7 @@
 
   </div>
 
-  <!-- Direitos Autorais / Linha Inferior -->
-  <div class="footer-bottom">
-    <p>&copy; 2026 GPS Brasília. Todos os direitos reservados.</p>
-  </div>
-</footer>
+
+
+    
+   
