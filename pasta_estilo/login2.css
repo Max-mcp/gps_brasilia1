@@ -1,0 +1,82 @@
+:root {
+  --navy: #0d1b3d;
+  --blue: #1556c0;
+  --teal: #00bfa8;
+  --ink: #10182d;
+  --muted: #667085;
+  --border: #dce3ea;
+  --paper: #f1f3f5;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body { margin: 0; color: var(--ink); }
+button, input { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+.auth-layout { min-height: 100svh; display: grid; grid-template-columns: minmax(360px, 45%) 1fr; }
+.auth-intro {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(28px, 5vw, 76px);
+  color: #fff;
+  background: linear-gradient(125deg, rgba(13,27,61,.94), rgba(13,27,61,.66)),
+    url("../assets/Gemini_Generated_Image_wgv4kowgv4kowgv4.jpg") center/cover, var(--navy);
+}
+.back-link { align-self: flex-start; color: #fff; font-size: .8rem; text-decoration: none; }
+.back-link:hover { color: #72e4d3; }
+.auth-intro-content { max-width: 570px; }
+.eyebrow { color: #72e4d3; font-size: .76rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.auth-intro h1 { margin: 18px 0 20px; font-size: clamp(2.5rem, 4.4vw, 4.9rem); line-height: 1.08; letter-spacing: -.04em; }
+.auth-intro-content p { max-width: 430px; line-height: 1.75; color: #e5eaf2; }
+.intro-footer { font-size: .7rem; letter-spacing: .24em; }
+
+.auth-panel { display: grid; place-items: center; min-width: 0; padding: 48px 26px; background: #fff; }
+.auth-content { width: min(100%, 460px); }
+.brand { display: inline-flex; align-items: center; gap: 8px; color: var(--navy); text-decoration: none; font-size: .95rem; font-weight: 700; letter-spacing: .1em; }
+.brand img { width: 72px; height: 72px; object-fit: contain; }
+.auth-content h2 { margin: 34px 0 4px; font-size: clamp(1.75rem, 3vw, 2.35rem); line-height: 1.2; }
+.panel-description { margin: 0 0 24px; color: var(--muted); font-size: .9rem; }
+.auth-tabs { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 25px; border-bottom: 1px solid var(--border); }
+.auth-tab { border: 0; border-bottom: 3px solid transparent; padding: 14px; background: transparent; color: var(--muted); font-size: .82rem; font-weight: 600; }
+.auth-tab.active { border-color: var(--teal); color: var(--navy); }
+.field { display: grid; gap: 7px; margin-bottom: 17px; }
+.field label { font-size: .82rem; font-weight: 600; color: var(--navy); }
+.field input {
+  width: 100%; min-height: 50px; padding: 12px 14px; color: var(--ink);
+  background: #fff; border: 1px solid var(--border); border-radius: 8px;
+}
+.field input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(21,86,192,.12); }
+.field small { color: var(--muted); font-size: .72rem; }
+.password-field { position: relative; }
+.password-field input { padding-right: 88px; }
+.password-toggle {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  border: 0; background: transparent; color: var(--blue); font-size: .72rem; font-weight: 600;
+}
+.remember { display: flex; align-items: center; gap: 9px; margin: 6px 0 22px; color: var(--muted); font-size: .78rem; }
+.remember input { accent-color: var(--blue); }
+.mensagem-alerta { min-height: 22px; margin: 0 0 12px; font-size: .78rem; }
+.mensagem-alerta.erro { color: #b42318; }
+.mensagem-alerta.sucesso { color: #087c6d; }
+.submit-button {
+  width: 100%; min-height: 52px; border: 0; border-radius: 8px;
+  color: #fff; background: var(--blue); font-size: .84rem; font-weight: 700;
+}
+.submit-button:hover { background: #10449a; }
+.submit-button:disabled { cursor: wait; opacity: .65; }
+.prototype-note { margin: 22px 0 0; color: var(--muted); font-size: .7rem; line-height: 1.6; }
+
+@media (max-width: 850px) {
+  .auth-layout { grid-template-columns: 1fr; }
+  .auth-intro { min-height: 230px; padding: 26px 22px; }
+  .auth-intro h1 { margin: 18px 0 0; font-size: clamp(1.85rem, 6vw, 2.7rem); }
+  .auth-intro-content p, .intro-footer { display: none; }
+  .auth-panel { padding: 38px 22px 60px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }

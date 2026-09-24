@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Acesse sua conta de demonstração no GPS Brasília.">
+  <title>Entrar | GPS Brasília</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../pasta_estilo/login2.css">
+  <script src="../pasta_JS/logvali2.js" defer></script>
+</head>
+<body class="auth-body">
+  <main class="auth-layout">
+    <section class="auth-intro" aria-label="GPS Brasília">
+      <a class="back-link" href="newindex.html">← Voltar ao início</a>
+      <div class="auth-intro-content">
+        <span class="eyebrow">Descubra. Viva. Pertença.</span>
+        <h1>Brasília é feita de caminhos para descobrir.</h1>
+        <p>Guarde lugares e continue explorando a cidade no seu ritmo.</p>
+      </div>
+      <span class="intro-footer">GPS BRASÍLIA</span>
+    </section>
+
+    <section class="auth-panel" aria-labelledby="auth-title">
+      <div class="auth-content">
+        <a class="brand" href="newindex.html" aria-label="GPS Brasília, voltar ao início">
+          <img src="../assets/image-logo-removebg-preview.png" alt="" width="72" height="72">
+          <span>GPS BRASÍLIA</span>
+        </a>
+
+        <h2 id="auth-title">Sua cidade começa aqui.</h2>
+        <p class="panel-description">Entre ou crie uma conta de demonstração.</p>
+
+        <div class="auth-tabs" role="tablist" aria-label="Acesso à conta">
+          <button class="auth-tab active" id="tab-login" type="button" role="tab"
+            aria-selected="true" aria-controls="form-login" data-tab="login">Entrar</button>
+          <button class="auth-tab" id="tab-cadastro" type="button" role="tab"
+            aria-selected="false" aria-controls="form-cadastro" data-tab="cadastro">Criar conta</button>
+        </div>
+
+        <form id="form-login" class="auth-form" aria-labelledby="tab-login">
+          <div class="field">
+            <label for="login-email">E-mail</label>
+            <input id="login-email" name="email" type="email" autocomplete="email"
+              placeholder="voce@exemplo.com" required>
+          </div>
+          <div class="field">
+            <label for="login-senha">Senha</label>
+            <div class="password-field">
+              <input id="login-senha" name="senha" type="password" autocomplete="current-password"
+                placeholder="Digite sua senha" required>
+              <button type="button" class="password-toggle" data-target="login-senha"
+                aria-label="Mostrar senha">Mostrar</button>
+            </div>
+          </div>
+          <label class="remember">
+            <input id="lembrar-login" type="checkbox"> Manter acesso neste navegador
+          </label>
+          <p id="msg-login" class="mensagem-alerta" role="status" aria-live="polite"></p>
+          <button class="submit-button" type="submit">Entrar</button>
+        </form>
+
+        <form id="form-cadastro" class="auth-form" aria-labelledby="tab-cadastro" hidden>
+          <div class="field">
+            <label for="cad-nome">Nome completo</label>
+            <input id="cad-nome" name="nome" type="text" autocomplete="name" minlength="3"
+              placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label for="cad-email">E-mail</label>
+            <input id="cad-email" name="email" type="email" autocomplete="email"
+              placeholder="voce@exemplo.com" required>
+          </div>
+          <div class="field">
+            <label for="cad-senha">Senha</label>
+            <div class="password-field">
+              <input id="cad-senha" name="senha" type="password" autocomplete="new-password"
+                minlength="8" placeholder="Pelo menos 8 caracteres" required>
+              <button type="button" class="password-toggle" data-target="cad-senha"
+                aria-label="Mostrar senha">Mostrar</button>
+            </div>
+            <small>Use pelo menos uma letra e um número.</small>
+          </div>
+          <div class="field">
+            <label for="cad-confirmacao">Confirme a senha</label>
+            <div class="password-field">
+              <input id="cad-confirmacao" name="confirmacao" type="password" autocomplete="new-password"
+                minlength="8" placeholder="Repita a senha" required>
+              <button type="button" class="password-toggle" data-target="cad-confirmacao"
+                aria-label="Mostrar confirmação de senha">Mostrar</button>
+            </div>
+          </div>
+          <p id="msg-cadastro" class="mensagem-alerta" role="status" aria-live="polite"></p>
+          <button class="submit-button" type="submit">Criar conta</button>
+        </form>
+        <p class="prototype-note">Protótipo local: use dados fictícios e uma senha que você não utiliza em outros serviços.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

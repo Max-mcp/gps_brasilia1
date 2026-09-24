@@ -420,7 +420,8 @@
     </div>
 </section>
 
-<!-- UM ÚNICO MODAL É UTILIZADO PELAS OITO CATEGORIAS -->
+
+<!-- MODAL UTILIZADO PELAS OITO CATEGORIAS -->
 <div
     class="explore-modal"
     id="explore-modal"
@@ -430,208 +431,58 @@
     aria-hidden="true"
 >
     <div class="explore-dialog" tabindex="-1">
+
         <header class="explore-modal-header">
+
             <div>
-                <p class="explore-modal-eyebrow">Explore Brasília</p>
+                <p class="explore-modal-eyebrow">
+                    Explore Brasília
+                </p>
+
                 <h2 id="explore-modal-title"></h2>
+
                 <div class="explore-modal-rule"></div>
-                <p class="explore-modal-description" id="explore-modal-description"></p>
+
+                <p
+                    class="explore-modal-description"
+                    id="explore-modal-description"
+                ></p>
             </div>
 
-            <button class="explore-modal-close" type="button" aria-label="Fechar categoria">×</button>
+            <button
+                class="explore-modal-close"
+                type="button"
+                aria-label="Fechar categoria"
+            >
+                ×
+            </button>
+
         </header>
 
-        <!-- Filtros ilustrativos -->
-        <div class="modal-filters">
+        <!-- O JavaScript colocará os filtros aqui -->
+        <div
+            class="explore-modal-filters"
+            id="explore-modal-filters"
+        ></div>
 
-            <button type="button" class="filter-button active">
-                Todos
-            </button>
-
-            <button type="button" class="filter-button">
-                Restaurantes
-            </button>
-
-            <button type="button" class="filter-button">
-                Cafés
-            </button>
-
-            <button type="button" class="filter-button">
-                Bares
-            </button>
-
-            <button type="button" class="filter-button">
-                Comida regional
-            </button>
-
-        </div>
-
-        <!-- Lista de lugares -->
-        <div class="gastronomia-grid">
-
-            <!-- Primeiro lugar -->
-            <article class="gastronomia-card">
-
-                <div class="gastronomia-image">
-
-                    <img
-                        src="./assets/restaurante-1.jpg"
-                        alt="Restaurante em Brasília"
-                    >
-
-                    <button
-                        class="favorite-button"
-                        type="button"
-                        aria-label="Adicionar restaurante aos favoritos"
-                    >
-                        ♡
-                    </button>
-
-                    <span class="place-category">
-                        Restaurante
-                    </span>
-
-                </div>
-
-                <div class="gastronomia-content">
-
-                    <p class="place-region">
-                        Asa Sul
-                    </p>
-
-                    <h3>
-                        Sabores de Brasília
-                    </h3>
-
-                    <p>
-                        Cozinha brasileira contemporânea em um ambiente
-                        inspirado na arquitetura da capital.
-                    </p>
-
-                    <div class="place-footer">
-
-                        <span>$$</span>
-
-                        <a href="#mapa">
-                            Conhecer →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <!-- Segundo lugar -->
-            <article class="gastronomia-card">
-
-                <div class="gastronomia-image">
-
-                    <img
-                        src="./assets/restaurante-2.jpg"
-                        alt="Café localizado em Brasília"
-                    >
-
-                    <button
-                        class="favorite-button"
-                        type="button"
-                        aria-label="Adicionar café aos favoritos"
-                    >
-                        ♡
-                    </button>
-
-                    <span class="place-category">
-                        Café
-                    </span>
-
-                </div>
-
-                <div class="gastronomia-content">
-
-                    <p class="place-region">
-                        Asa Norte
-                    </p>
-
-                    <h3>
-                        Café do Cerrado
-                    </h3>
-
-                    <p>
-                        Cafés especiais, confeitaria artesanal e um espaço
-                        tranquilo para aproveitar a cidade.
-                    </p>
-
-                    <div class="place-footer">
-
-                        <span>$</span>
-
-                        <a href="#mapa">
-                            Conhecer →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <!-- Terceiro lugar -->
-            <article class="gastronomia-card">
-
-                <div class="gastronomia-image">
-
-                    <img
-                        src="./assets/restaurante-3.jpg"
-                        alt="Restaurante próximo ao Lago Paranoá"
-                    >
-
-                    <button
-                        class="favorite-button"
-                        type="button"
-                        aria-label="Adicionar restaurante aos favoritos"
-                    >
-                        ♡
-                    </button>
-
-                    <span class="place-category">
-                        Experiência
-                    </span>
-
-                </div>
-
-                <div class="gastronomia-content">
-
-                    <p class="place-region">
-                        Lago Sul
-                    </p>
-
-                    <h3>
-                        Mesa do Lago
-                    </h3>
-
-                    <p>
-                        Gastronomia, natureza e uma vista privilegiada
-                        para o pôr do sol no Lago Paranoá.
-                    </p>
-
-                    <div class="place-footer">
-
-                        <span>$$$</span>
-
-                        <a href="#mapa">
-                            Conhecer →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
+        <!-- O JavaScript colocará os lugares aqui -->
+        <div
+            class="explore-places-grid"
+            id="explore-places-grid"
+        ></div>
 
         <div class="explore-modal-bottom">
-            <p>Conhece outro lugar especial?</p>
-            <a href="indicar-local.html">Indique um lugar →</a>
+
+            <p>
+                Conhece outro lugar especial?
+            </p>
+
+            <a href="indicar-local.html">
+                Indique um lugar →
+            </a>
+
         </div>
+
     </div>
 </div>
         <!-- EXPERIÊNCIAS -->
@@ -922,10 +773,10 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="/pasta_JS/index.js"></script>
-    <script src="/pasta_JS/experiencias-modal.js"></script>
-    <script src="/pasta_JS/explorar-modal.js"></script>
-    <script src="/pasta_JS/paginas.js"></script>
+    <script src="../pasta_JS/index.js"></script>
+    <script src="../pasta_JS/experiencias-modal.js"></script>
+    <script src="../pasta_JS/explorar-modal.js"></script>
+    
 </body>
 
 </html>
