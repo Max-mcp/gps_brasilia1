@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (document.querySelector("#lembrar-login").checked ? localStorage : sessionStorage)
         .setItem(SESSION_KEY, sessao);
       mensagem("login", `Bem-vindo(a), ${user.nome}! Redirecionando...`, "sucesso");
-      window.setTimeout(() => { window.location.href = "newindex.html"; }, 700);
+      window.setTimeout(() => { window.location.href = "index.html"; }, 700);
     } catch (error) {
       mensagem("login", "Não foi possível acessar os dados neste navegador.");
       console.error(error);

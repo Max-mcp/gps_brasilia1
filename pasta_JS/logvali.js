@@ -59,7 +59,7 @@ formLogin.addEventListener('submit', function(event) {
         mostrarMensagem(msgLogin, `Bem-vindo(a), ${usuarioValido.nome}! Entrando...`, 'sucesso');
         // Aguarda 1 segundo antes de mudar de página
         setTimeout(() => {
-            window.location.href = 'newindex.html';
+            window.location.href = 'index.html';
         }, 1000);
     } else { 
         mostrarMensagem(msgLogin, 'E-mail ou senha incorretos.', 'erro');

@@ -1811,3 +1811,15 @@ body.modal-open {
     }
 
 }
+.category-grid .explore-category .category-icon {
+    display: block;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.category-grid .explore-category:hover .category-icon,
+.category-grid .explore-category:focus-visible .category-icon {
+    filter: brightness(0) invert(1);
+}
