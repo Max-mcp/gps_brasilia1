@@ -1,100 +1,51 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    /* ===================================
-       MENU DO CELULAR
-    =================================== */
+
+    
 
     document.addEventListener("DOMContentLoaded", () => {
 
-    const menuToggle =
-        document.querySelector(".menu-toggle");
+/* ===================================
+       MENU DO CELULAR
+    =================================== */
 
-    const mainNav =
-        document.querySelector(".main-nav");
-
-    if (!menuToggle || !mainNav) {
-        return;
-    }
-
-    function abrirMenu() {
-
-        mainNav.classList.add("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        menuToggle.textContent = "×";
-        menuToggle.setAttribute(
-            "aria-label",
-            "Fechar menu"
-        );
-
-    }
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
     function fecharMenu() {
+        if (!menuToggle || !mainNav) return;
 
         mainNav.classList.remove("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menu");
         menuToggle.textContent = "☰";
-        menuToggle.setAttribute(
-            "aria-label",
-            "Abrir menu"
-        );
-
     }
 
-    menuToggle.addEventListener("click", () => {
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", () => {
+            const aberto = mainNav.classList.toggle("open");
 
-        const menuEstaAberto =
-            mainNav.classList.contains("open");
-
-        if (menuEstaAberto) {
-            fecharMenu();
-        } else {
-            abrirMenu();
-        }
-
-    });
-
-    // Fecha depois de clicar em qualquer link da navbar
-    mainNav
-        .querySelectorAll("a")
-        .forEach((link) => {
-
-            link.addEventListener("click", () => {
-                fecharMenu();
-            });
-
+            menuToggle.setAttribute("aria-expanded", String(aberto));
+            menuToggle.setAttribute(
+                "aria-label",
+                aberto ? "Fechar menu" : "Abrir menu"
+            );
+            menuToggle.textContent = aberto ? "×" : "☰";
         });
 
-    // Fecha ao pressionar Esc
-    document.addEventListener("keydown", (evento) => {
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", fecharMenu);
+        });
 
-        if (evento.key === "Escape") {
-            fecharMenu();
-        }
+        document.addEventListener("keydown", (evento) => {
+            if (evento.key === "Escape") fecharMenu();
+        });
 
-    });
-
-    // Fecha ao voltar para a versão de computador
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 850) {
-            fecharMenu();
-        }
-
-    });
-
-});
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 850) fecharMenu();
+        });
+    }
 
 
     /* ===================================

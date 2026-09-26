@@ -823,7 +823,7 @@ footer-logo
         padding: 13px 0;
     }
 
-}
+
 
     .hero {
         min-height: calc(100svh - 70px);
@@ -1834,4 +1834,18 @@ body.modal-open {
 .category-grid .explore-category:hover .category-icon,
 .category-grid .explore-category:focus-visible .category-icon {
     filter: brightness(0) invert(1);
+}
+@media (max-width: 850px) {
+    .site-header {
+        height: 70px;
+    }
+
+    .site-header .main-nav {
+        top: 100%;
+        display: none;
+    }
+
+    .site-header .main-nav.open {
+        display: flex;
+    }
 }
