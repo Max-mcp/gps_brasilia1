@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="GPS Brasília: lugares, histórias e experiências para viver a capital.">
+
+    <title>GPS Brasília | Descubra. Viva. Pertença.</title>
+
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/pasta_estilo/styles.css">
+    <link rel="stylesheet" href="/pasta_estilo/experiencias-modal.css">
+    <link rel="stylesheet" href="/pasta_estilo/explorar-modal.css">
+    <link rel="stylesheet" href="/pasta_estilo/chatbot.css">
+    <style>
+
+    .gps-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        height: 90px;
+
+        padding: 0 5%;
+
+        background-color: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+
+        overflow: visible;
+    }
+
+    .gps-navbar-logo-link {
+        display: flex;
+        align-items: center;
+
+        width: 170px;
+        height: 80px;
+
+        margin: 0;
+        padding: 0;
+
+        flex-shrink: 0;
+    }
+
+    .gps-navbar-logo {
+        display: block !important;
+
+        width: 180px !important;
+        height: 76px !important;
+        max-width: 180px !important;
+        max-height: 76px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        object-fit: contain !important;
+        object-position: left center !important;
+    }
+
+    .gps-navbar-menu {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .gps-navbar-menu a {
+        color: #0d1b3d;
+
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .gps-navbar-menu a:hover {
+        color: #00bfa8;
+    }
+
+    @media (max-width: 850px) {
+
+        .gps-navbar {
+            height: 72px;
+            padding: 0 20px;
+        }
+
+        .gps-navbar-logo-link {
+            width: 190px;
+            height: 80px;
+        }
+
+        .gps-navbar-logo {
+            width: 120px !important;
+            height: 55px !important;
+            max-width: 120px !important;
+            max-height: 55px !important;
+        }
+
+        .gps-navbar-menu {
+            position: absolute;
+            top: 72px;
+            right: 0;
+            left: 0;
+
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+
+            padding: 15px 20px;
+
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .gps-navbar-menu.open {
+            display: flex;
+        }
+
+        .gps-navbar-menu a {
+            width: 100%;
+            padding: 12px 0;
+        }
+
+    }
+
+</style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="site-header" id="inicio">
+
+    <!-- LOGO -->
+    <a class="brand" href="#inicio" aria-label="GPS Brasília, início">
+        <img
+            class="header-logo"
+            src="/assets/Inserir um título.png"
+            alt="Logo GPS Brasília"
+        >
+    </a>
+
+    <!-- BOTÃO DO MENU PARA CELULAR -->
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+    >
+        ☰
+    </button>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="main-nav" aria-label="Navegação principal">
+
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#explorar">Explorar</a>
+        <a href="#experiencias">Experiências</a>
+        <a href="#mapa">Mapa</a>
+
+        <!-- MENU DE PERFIL -->
+        <div class="profile-menu">
+
+            <button
+                class="profile-trigger"
+                id="profile-trigger"
+                type="button"
+                aria-label="Abrir menu do perfil"
+                aria-expanded="false"
+                aria-controls="profile-dropdown"
+            >
+                <!-- ÍCONE DE PERFIL -->
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <circle cx="12" cy="8" r="4"></circle>
+
+                    <path
+                        d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"
+                    ></path>
+                </svg>
+            </button>
+
+            <!-- MENU QUE ABRE AO CLICAR -->
+            <div
+                class="profile-dropdown"
+                id="profile-dropdown"
+                hidden
+            >
+
+                <div class="profile-dropdown-header">
+                    <span class="profile-small-icon">♙</span>
+
+                    <div>
+                        <strong>Bem-vindo!</strong>
+                        <small>Acesse sua conta</small>
+                    </div>
+                </div>
+
+                <a href="login.html">
+                    <span>Entrar</span>
+                    <span>→</span>
+                </a>
+
+                <a href="minha-conta.html">
+                    <span>Minha conta</span>
+                    <span>→</span>
+                </a>
+
+                <a href="favoritos.html">
+                    <span>Meus favoritos</span>
+                    <span>♡</span>
+                </a>
+
+                <a href="indicar-local.html">
+                    <span>Indicar um local</span>
+                    <span>＋</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="../assets/GPS_BRASILIA_VIDEO.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+
+                <p class="eyebrow light">
+                    Descubra. Viva. Pertença.
+                </p>
+
+                <h1 id="hero-title">
+                    Brasília,
+                    <br>
+
+                    seu
+                    <em>caminho,</em>
+
+                    <br>
+
+                    sua
+                    <span>cidade!</span>
+                </h1>
+
+                <p class="hero-copy">
+                    Descubra lugares, histórias e experiências que fazem
+                    de Brasília um lugar único.
+                </p>
+
+                <div class="actions">
+
+                    <a class="button primary" href="#explorar">
+                        Explorar
+                    </a>
+
+                    <a class="text-link light" href="#sobre">
+                        Saiba mais
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SOBRE -->
+        <section class="section about" id="sobre">
+
+            <div class="about-copy reveal">
+
+                <p class="eyebrow">Quem somos</p>
+
+                <h2>
+                    Sobre o
+                    <br>
+                    GPS Brasília
+                </h2>
+
+                <div class="rule"></div>
+
+                <p>
+                    Somos um guia digital colaborativo que conecta pessoas
+                    aos melhores lugares, histórias e experiências de Brasília.
+                </p>
+
+                <p>
+                    Mais que um guia, somos um ponto de encontro entre você
+                    e a cidade.
+                </p>
+
+            </div>
+
+            <div class="about-visual reveal">
+
+                <div class="line-symbol" aria-hidden="true">
+                    ◇
+                </div>
+
+                <!-- TROQUE A IMAGEM DA SEÇÃO SOBRE AQUI -->
+                <img
+                    src="/assets/palacio-alvorada.jpg"
+                    alt="Palácio da Alvorada, em Brasília"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="stats" aria-label="Números do GPS Brasília">
+
+                <div>
+                    <strong>+500</strong>
+                    <span>Lugares</span>
+                </div>
+
+                <div>
+                    <strong>+50</strong>
+                    <span>Experiências</span>
+                </div>
+
+                <div>
+                    <strong>+10K</strong>
+                    <span>Usuários</span>
+                </div>
+
+                <div>
+                    <strong>1</strong>
+                    <span>Cidade única</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- EXPLORAR -->
+<section class="section explore" id="explorar">
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">Do seu jeito</p>
+            <h2>Explore<br>Brasília</h2>
+            <div class="rule"></div>
+        </div>
+
+        <p>
+            Encontre o que combina com você e descubra
+            o melhor da nossa cidade.
+        </p>
+    </div>
+
+    <div class="category-grid reveal">
+
+    <button class="explore-category" type="button" data-category="gastronomia">
+        <img class="category-icon" src="../assets/Culinaria.png" alt="">
+        <span>Gastronomia</span>
+    </button>
+
+    <button class="explore-category" type="button" data-category="lazer">
+        <img class="category-icon" src="../assets/LAZER.png" alt="">
+        <span>Lazer ao ar livre</span>
+    </button>
+
+    <button class="explore-category" type="button" data-category="cultura">
+        <img class="category-icon" src="../assets/cultura.png" alt="">
+        <span>Cultura</span>
+    </button>
+
+    <button class="explore-category" type="button" data-category="arquitetura">
+        <img class="category-icon" src="../assets/arquitetura.png" alt="">
+        <span>Arquitetura</span>
+    </button>
+
+    <button class="explore-category" type="button" data-category="compras">
+        <img class="category-icon" src="../assets/compras.png" alt="">
+        <span>Compras</span>
+    </button>
+
+    <button class="explore-category" type="button" data-category="vida-noturna">
+        <img class="category-icon" src="../assets/vidanoturna.png" alt="">
+        <span>Vida noturna</span>
+    </button>
+
+    <button class="explore-category" type="button" data-category="historia">
+        <img class="category-icon" src="../assets/historia.png" alt="">
+        <span>História</span>
+    </button>
+
+    <button class="explore-category" type="button" data-category="familia">
+        <img class="category-icon" src="../assets/familia.png" alt="">
+        <span>Família</span>
+    </button>
+
+</div>
+</section>
+
+
+<!-- MODAL UTILIZADO PELAS OITO CATEGORIAS -->
+<div
+    class="explore-modal"
+    id="explore-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="explore-modal-title"
+    aria-hidden="true"
+>
+    <div class="explore-dialog" tabindex="-1">
+
+        <header class="explore-modal-header">
+
+            <div>
+                <p class="explore-modal-eyebrow">
+                    Explore Brasília
+                </p>
+
+                <h2 id="explore-modal-title"></h2>
+
+                <div class="explore-modal-rule"></div>
+
+                <p
+                    class="explore-modal-description"
+                    id="explore-modal-description"
+                ></p>
+            </div>
+
+            <button
+                class="explore-modal-close"
+                type="button"
+                aria-label="Fechar categoria"
+            >
+                ×
+            </button>
+
+        </header>
+
+        <!-- O JavaScript colocará os filtros aqui -->
+        <div
+            class="explore-modal-filters"
+            id="explore-modal-filters"
+        ></div>
+
+        <!-- O JavaScript colocará os lugares aqui -->
+        <div
+            class="explore-places-grid"
+            id="explore-places-grid"
+        ></div>
+
+        <div class="explore-modal-bottom">
+
+            <p>
+                Conhece outro lugar especial?
+            </p>
+
+            <a href="indicar-local.html">
+                Indique um lugar →
+            </a>
+
+        </div>
+
+    </div>
+</div>
+        <!-- EXPERIÊNCIAS -->
+        <section class="section experiences" id="experiencias">
+
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">Para guardar na memória</p>
+            <h2>Viva experiências<br>inesquecíveis</h2>
+            <div class="rule"></div>
+        </div>
+
+        <p>
+            Atividades, eventos e roteiros para você viver
+            o melhor de Brasília.
+        </p>
+    </div>
+
+    <div class="card-grid">
+
+        <article class="place-card reveal">
+            <!-- IMAGEM DO PRIMEIRO CARD -->
+            <img src="/assets/brasilia-cathedral-cc.webp"
+                alt="Catedral Metropolitana de Brasília ao entardecer" loading="lazy">
+
+            <div>
+                <span>Roteiro</span>
+                <h3>Brasília Monumental</h3>
+
+                <a href="#" class="experience-open" data-experience="monumental">
+                    Ver roteiro →
+                </a>
+            </div>
+        </article>
+
+        <article class="place-card reveal">
+            <!-- IMAGEM DO SEGUNDO CARD -->
+            <img src="https://www.viajenaviagem.com/wp-content/uploads/2014/04/brasilia-ponte-jk-1920x640-1.jpg"
+                alt="Ponte JK ao entardecer" loading="lazy">
+
+            <div>
+                <span>Experiência</span>
+                <h3>Pôr do sol no Lago Sul</h3>
+
+                <a href="#" class="experience-open" data-experience="por-do-sol">
+                    Ver mais →
+                </a>
+            </div>
+        </article>
+
+        <article class="place-card reveal accent-card">
+            <div class="card-number">03</div>
+
+            <div>
+                <span>Evento</span>
+                <h3>Brasília depois das seis</h3>
+
+                <p>
+                    Descubra cultura, gastronomia e encontros
+                    quando a cidade acende.
+                </p>
+
+                <a href="#" class="experience-open" data-experience="depois-das-seis">
+                    Ver mais →
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<!--
+    MODAL DAS EXPERIÊNCIAS
+    Cole este bloco depois da seção Experiências ou antes de </main>.
+    O conteúdo é preenchido pelo arquivo experiencias-modal.js.
+-->
+<div class="experience-modal" id="experience-modal" role="dialog" aria-modal="true"
+    aria-labelledby="experience-modal-title" aria-hidden="true">
+    <div class="experience-dialog" tabindex="-1">
+
+        <button class="experience-close" type="button" aria-label="Fechar detalhes da experiência">
+            ×
+        </button>
+
+        <!-- METADE ESQUERDA: GALERIA -->
+        <div class="experience-gallery">
+
+            <div class="experience-main-image">
+                <img src="" alt="" id="experience-main-image">
+
+                <button class="gallery-arrow gallery-prev" type="button" aria-label="Imagem anterior">
+                    ‹
+                </button>
+
+                <button class="gallery-arrow gallery-next" type="button" aria-label="Próxima imagem">
+                    ›
+                </button>
+
+                <span class="gallery-counter" id="gallery-counter">1 / 4</span>
+            </div>
+
+            <div class="experience-thumbnails" id="experience-thumbnails" aria-label="Miniaturas da experiência"></div>
+
+        </div>
+
+        <!-- METADE DIREITA: INFORMAÇÕES -->
+        <div class="experience-details">
+
+            <div class="experience-heading">
+                <div>
+                    <p class="experience-category" id="experience-category"></p>
+                    <h2 id="experience-modal-title"></h2>
+                </div>
+
+                <button class="experience-favorite" type="button" aria-label="Adicionar experiência aos favoritos">
+                    ♡
+                </button>
+            </div>
+
+            <div class="experience-location">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 22s7-6.1 7-13A7 7 0 1 0 5 9c0 6.9 7 13 7 13Z"></path>
+                    <circle cx="12" cy="9" r="2.3"></circle>
+                </svg>
+                <span id="experience-address"></span>
+            </div>
+
+            <p class="experience-description" id="experience-description"></p>
+
+            <div class="experience-info-grid">
+                <div>
+                    <span>Duração</span>
+                    <strong id="experience-duration"></strong>
+                </div>
+
+                <div>
+                    <span>Melhor horário</span>
+                    <strong id="experience-time"></strong>
+                </div>
+
+                <div>
+                    <span>Valor</span>
+                    <strong id="experience-price"></strong>
+                </div>
+
+                <div>
+                    <span>Indicado para</span>
+                    <strong id="experience-audience"></strong>
+                </div>
+            </div>
+
+            <div class="experience-highlights">
+                <h3>O que você vai encontrar</h3>
+                <ul id="experience-highlights"></ul>
+            </div>
+
+            <div class="experience-actions">
+                <a class="experience-route" id="experience-route" href="#" target="_blank" rel="noopener">
+                    Ver rota no mapa ↗
+                </a>
+
+                <button class="experience-share" type="button">
+                    Compartilhar
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+        <!-- MAPA -->
+        <section class="map-section" id="mapa">
+
+            <div class="map-copy reveal">
+
+                <p class="eyebrow">
+                    Encontre seu caminho
+                </p>
+
+                <h2>
+                    Mapa
+                    <br>
+                    interativo
+                </h2>
+
+                <div class="rule"></div>
+
+                <p>
+                    Navegue pelo mapa e descubra lugares incríveis
+                    perto de você.
+                </p>
+
+                <a class="button primary" href="https://www.google.com/maps/search/pontos+turísticos+Brasília"
+                    target="_blank" rel="noopener">
+                    Abrir mapa ↗
+                </a>
+
+            </div>
+
+            <div class="map-frame">
+
+                <iframe title="Mapa de Brasília" src="https://www.google.com/maps?q=Brasília%20DF&output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+
+        <div class="footer-brand">
+
+            <a
+                class="footer-logo-link"
+                href="#inicio"
+                aria-label="GPS Brasília, voltar ao início">
+
+                <!-- TROQUE A LOGO DO RODAPÉ AQUI -->
+                <img
+                    class="footer-logo"
+                    src="/assets/Rectangle 6.png"
+                    alt="GPS Brasília"
+                >
+
+            </a>
+
+            <p>
+                Seu guia para descobrir, viver e se conectar com
+                o que faz da nossa cidade um lugar inesquecível.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Navegue</h3>
+
+            <a href="#explorar">Explorar</a>
+            <a href="#experiencias">Experiências</a>
+            <a href="#mapa">Mapa</a>
+
+        </div>
+
+        <div>
+
+            <h3>Informações</h3>
+
+            <a href="#sobre">Sobre nós</a>
+
+            <a href="mailto:contato@gpsbrasilia.com.br">
+                Seja parceiro
+            </a>
+
+            <a href="mailto:contato@gpsbrasilia.com.br">
+                Fale conosco
+            </a>
+
+        </div>
+
+        <div>
+
+            <h3>Contato</h3>
+
+            <p>contato@gpsbrasilia.com.br</p>
+            <p>(61) 99999-9999</p>
+            <p>Brasília, DF</p>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 GPS Brasília.
+            </span>
+
+            <span>
+                Descubra. Viva. Pertença.
+            </span>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../pasta_JS/index.js"></script>
+    <script src="../pasta_JS/experiencias-modal.js"></script>
+    <script src="../pasta_JS/explorar-modal.js"></script>
+    <script src="../pasta_JS/chatbot.js"></script>
+</body>
+
+</html>

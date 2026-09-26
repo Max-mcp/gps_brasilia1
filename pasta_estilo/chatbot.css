@@ -1,0 +1,193 @@
+/* GPS Brasília — chatbot de recomendações */
+.gps-chatbot,
+.gps-chatbot * {
+    box-sizing: border-box;
+}
+
+.gps-chatbot {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 90;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #0d1b3d;
+}
+
+.gps-chatbot-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 30px;
+    background: #1556c0;
+    color: #fff;
+    font: 600 0.82rem "Poppins", Arial, sans-serif;
+    box-shadow: 0 12px 30px rgb(13 27 61 / 24%);
+    cursor: pointer;
+}
+
+.gps-chatbot-toggle:hover,
+.gps-chatbot-toggle:focus-visible {
+    background: #0d1b3d;
+}
+
+.gps-chatbot-toggle span:first-child {
+    font-size: 1.2rem;
+}
+
+.gps-chatbot-panel {
+    position: absolute;
+    right: 0;
+    bottom: 66px;
+    display: flex;
+    flex-direction: column;
+    width: min(380px, calc(100vw - 32px));
+    max-height: min(620px, calc(100dvh - 105px));
+    overflow: hidden;
+    border: 1px solid #dce3e9;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 22px 60px rgb(13 27 61 / 24%);
+}
+
+.gps-chatbot-panel[hidden] {
+    display: none;
+}
+
+.gps-chatbot-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+    background: #0d1b3d;
+    color: #fff;
+}
+
+.gps-chatbot-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.gps-chatbot-header strong {
+    font-size: 1rem;
+}
+
+.gps-chatbot-header span {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.gps-chatbot-close {
+    border: 0;
+    padding: 0 4px;
+    background: transparent;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.gps-chatbot-messages {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 110px;
+    overflow-y: auto;
+    padding: 18px;
+}
+
+.gps-chatbot-message {
+    align-self: flex-start;
+    max-width: 92%;
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: 14px 14px 14px 4px;
+    background: #f1f3f5;
+    font-size: 0.81rem;
+    line-height: 1.5;
+}
+
+.gps-chatbot-message--usuario {
+    align-self: flex-end;
+    border-radius: 14px 14px 4px 14px;
+    background: #e1f7f2;
+}
+
+.gps-chatbot-places {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.gps-chatbot-place {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 11px;
+    border: 1px solid #e0e5eb;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+.gps-chatbot-place span {
+    color: #5f6777;
+}
+
+.gps-chatbot-place a,
+.gps-chatbot-more {
+    align-self: flex-start;
+    color: #1556c0;
+    font: 600 0.76rem "Poppins", Arial, sans-serif;
+    text-decoration: none;
+}
+
+.gps-chatbot-more {
+    border: 0;
+    padding: 4px 0;
+    background: none;
+    cursor: pointer;
+}
+
+.gps-chatbot-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 12px 16px 16px;
+    border-top: 1px solid #e0e5eb;
+}
+
+.gps-chatbot-actions button {
+    border: 1px solid #cbd6e3;
+    border-radius: 18px;
+    padding: 7px 10px;
+    background: #fff;
+    color: #0d1b3d;
+    font: 500 0.69rem "Poppins", Arial, sans-serif;
+    cursor: pointer;
+}
+
+.gps-chatbot-actions button:hover,
+.gps-chatbot-actions button:focus-visible {
+    border-color: #1556c0;
+    background: #eef4ff;
+}
+
+@media (max-width: 480px) {
+    .gps-chatbot {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .gps-chatbot-panel {
+        bottom: 64px;
+        width: calc(100vw - 24px);
+    }
+}
