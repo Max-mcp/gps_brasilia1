@@ -6,49 +6,95 @@ document.addEventListener("DOMContentLoaded", () => {
        MENU DO CELULAR
     =================================== */
 
+    document.addEventListener("DOMContentLoaded", () => {
+
     const menuToggle =
         document.querySelector(".menu-toggle");
 
     const mainNav =
         document.querySelector(".main-nav");
 
-    if (menuToggle && mainNav) {
+    if (!menuToggle || !mainNav) {
+        return;
+    }
 
-        menuToggle.addEventListener("click", () => {
+    function abrirMenu() {
 
-            const menuAberto =
-                mainNav.classList.toggle("open");
+        mainNav.classList.add("open");
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(menuAberto)
-            );
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
 
-            menuToggle.textContent =
-                menuAberto ? "×" : "☰";
+        menuToggle.textContent = "×";
+        menuToggle.setAttribute(
+            "aria-label",
+            "Fechar menu"
+        );
+
+    }
+
+    function fecharMenu() {
+
+        mainNav.classList.remove("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute(
+            "aria-label",
+            "Abrir menu"
+        );
+
+    }
+
+    menuToggle.addEventListener("click", () => {
+
+        const menuEstaAberto =
+            mainNav.classList.contains("open");
+
+        if (menuEstaAberto) {
+            fecharMenu();
+        } else {
+            abrirMenu();
+        }
+
+    });
+
+    // Fecha depois de clicar em qualquer link da navbar
+    mainNav
+        .querySelectorAll("a")
+        .forEach((link) => {
+
+            link.addEventListener("click", () => {
+                fecharMenu();
+            });
 
         });
 
-        mainNav
-            .querySelectorAll(":scope > a")
-            .forEach((link) => {
+    // Fecha ao pressionar Esc
+    document.addEventListener("keydown", (evento) => {
 
-                link.addEventListener("click", () => {
+        if (evento.key === "Escape") {
+            fecharMenu();
+        }
 
-                    mainNav.classList.remove("open");
+    });
 
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
+    // Fecha ao voltar para a versão de computador
+    window.addEventListener("resize", () => {
 
-                    menuToggle.textContent = "☰";
+        if (window.innerWidth > 850) {
+            fecharMenu();
+        }
 
-                });
+    });
 
-            });
-
-    }
+});
 
 
     /* ===================================
