@@ -20,8 +20,8 @@ const exploreData = {
         description: "Parques, trilhas, água e paisagens para aproveitar o céu aberto de Brasília.",
         filters: ["Todos", "Parques", "Água", "Trilhas"],
         places: [
-            place("Parque da Cidade", "Plano Piloto", "Parques", "Pistas, áreas verdes e espaços para esporte e descanso.", "Grátis", "https://www.google.com/maps/search/Parque+da+Cidade+Brasília", img("/asset"), img("1501785888041-af3ef285b470")),
-            place("Stand up no Lago", "Lago Paranoá", "Água", "Uma nova perspectiva da cidade sobre as águas do lago.", "$$", "https://www.google.com/maps/search/stand+up+paddle+Lago+Paranoá", img("1530053969600-caed2596d242"), img("1507525428034-b723cf961d3e")),
+            place("Parque da Cidade", "Plano Piloto", "Parques", "Pistas, áreas verdes e espaços para esporte e descanso.", "Grátis", "https://www.google.com/maps/search/Parque+da+Cidade+Brasília", "../assets/parque_da_cidade1.jpg", "../assets/parque_da_cidade2.jpg"),
+            place("Stand up no Lago", "Lago Paranoá", "Água", "Uma nova perspectiva da cidade sobre as águas do lago.", "$$", "https://www.google.com/maps/search/stand+up+paddle+Lago+Paranoá","../assets/sup_lago2.jpg","../assets/" ),
             place("Jardim Botânico", "Lago Sul", "Trilhas", "Trilhas interpretativas e contato com o Cerrado.", "$", "https://www.google.com/maps/search/Jardim+Botânico+de+Brasília", img("1441974231531-c6227db76b6e"), img("1501854140801-50d01698950b"))
         ]
     },
@@ -31,7 +31,7 @@ const exploreData = {
         filters: ["Todos", "Museus", "Cinema", "Exposições"],
         places: [
             place("CCBB Brasília", "Setor de Clubes Sul", "Exposições", "Arte, teatro, música e cinema em programação contínua.", "Varia", "https://www.google.com/maps/search/CCBB+Brasília", "../assets/ccbb_brasília.jpg", "../assets/CCBB.jpg"),
-            place("Museu Nacional", "Esplanada", "Museus", "Exposições e arquitetura no coração monumental.", "Grátis", "https://www.google.com/maps/search/Museu+Nacional+da+República", "", img("1554907984-15263bfd63bd")),
+            place("Museu Nacional", "Esplanada", "Museus", "Exposições e arquitetura no coração monumental.", "Grátis", "https://www.google.com/maps/search/Museu+Nacional+da+República", "../assets/museu-nacional-da-republica.jpg", "../assets/museu-nacional-de-brasilia.jpg"),
             place("Cine Brasília", "Asa Sul", "Cinema", "Cinema brasileiro, festivais e memória audiovisual.", "$", "https://www.google.com/maps/search/Cine+Brasília", "../assets/ci.jpg", "../assets/cine_brasília.jpg")
         ]
     },
